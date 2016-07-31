@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Hello React!</title>
+
+    <script src="../../build/react.js"></script>
+    <script src="../../build/react-dom.js"></script>
+    <script src="../../build/browser.min.js"></script>
+
+</head>
+<body class="lean-bar">
+<section id="AppRoot" class="todoapp"></section>
+<script type="text/babel">
+    var TodoList = React.createClass({
+
+                     getInitialState: function () {
+                     return {
+                             todolist: []
+                     };
+                 },
+             render: function () {
+                 return (
+                     <div>
+                         <TypeNew  />
+                         {
+
+                         }
+                         <ListTodo todo={this.state.todolist} />
+                     </div>
+                 );
+             }
+     });
+
+
+     var TypeNew = React.createClass({
+
+                 });
+
+
+     var ListTodo = React.createClass({
+             render: function () {
+                 return (
+                     <ul id="todo-list">
+                             {
+
+                             }
+                             this.props.todo.map(function (item, i) {
+                                     return (
+                                         <li>
+                                             <label>{item}</label>
+                                             <button>delete</button>
+                                         </li>
+                                     );
+                                 })
+                             }
+                             </ul>
+                         );
+                     }
+                 });
+
+
+                 React.render(<TodoList />, document.getElementById('container'));
+</script>
+</body>
+</html>
+

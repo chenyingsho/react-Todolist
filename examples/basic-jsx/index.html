@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>sakurai sho</title>
+</head>
+<body>
+<div id="container"></div>
+<script src="../../build/react.js"></script>
+<script src="../../build/react-dom.js"></script>
+<script src="../../build/browser.min.js"></script>
+<script type="text/babel">
+  var Sakuraisho = React.createClass({
+    dothings:function () {
+      alert('hey'+this.props.children);
+    },
+    render:function () {
+      return(
+              <div>
+              <h1>{this.props.name}</h1>
+                <a href="#" onClick={this.dothings}>Click Me</a>
+                </div>
+      );
+    }
+  });
+  ReactDOM.render(
+          <div>
+            <Sakuraisho name="nino">世界一番池面</Sakuraisho>
+            <Sakuraisho name="jun">花样</Sakuraisho>
+            <Sakuraisho name="ohno">鱼</Sakuraisho>
+            <Sakuraisho name="aiba">工口</Sakuraisho>
+
+          </div>
+
+                  ,document.getElementById('container'));
+</script>
+</body>
+</html>
